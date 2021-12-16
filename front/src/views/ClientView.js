@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListContracts from '../components/ListContracts';
+import ListUnpaidJobs from '../components/ListUnpaidJobs';
 
 function ClientView({client}) {
     return (
@@ -12,7 +13,7 @@ function ClientView({client}) {
                     <ListContracts client={client} />
                 </Col>
                 <Col>
-                
+                    <ListUnpaidJobs client={client} />
                 </Col>
             </Row>
         </div>

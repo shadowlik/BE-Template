@@ -13,6 +13,10 @@ const api = {
         const { data } = await axios.get('/contracts');
         return data;
     },
+    async listUnpaidJobs() {
+        const { data } = await axios.get('/jobs/unpaid');
+        return data;
+    },
     admin: {
         async bestClients() {
             const { data } = await axios.get('/admin/best-clients');

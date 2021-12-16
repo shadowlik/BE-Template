@@ -1,6 +1,7 @@
 import ListContracts from "../components/ListContracts";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ListUnpaidJobs from "../components/ListUnpaidJobs";
 
 function ContractorView({contractor}) {
     return (
@@ -11,7 +12,7 @@ function ContractorView({contractor}) {
                     <ListContracts client={contractor} />
                 </Col>
                 <Col>
-                
+                    <ListUnpaidJobs client={contractor} />
                 </Col>
             </Row>
         </div>
