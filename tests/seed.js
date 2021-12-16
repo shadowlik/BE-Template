@@ -1,10 +1,6 @@
-/* eslint-disable */
 const { Profile, Contract, Job } = require('../src/models');
 
-/* WARNING THIS WILL DROP THE CURRENT DATABASE */
-seed();
-
-async function seed() {
+module.exports = async () => {
   // create tables
   await Profile.sync({ force: true });
   await Contract.sync({ force: true });

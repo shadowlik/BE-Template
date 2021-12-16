@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  deel-back:
+    container_name: deel-back
+    build:
+      context: .
+      target: development
+      dockerfile: ./Dockerfile
+    ports:
+      - "3001:3001"
+      - "9229:9229"
+    volumes:
+      - .:/app
+    networks:
+      - deel-network
+    command: npm run start:debug
+  deel-front:
+    container_name: deel-front
+    build:
+      context: ./front
+      dockerfile: ./Dockerfile
+    command: npm start
+    ports:
+      - 3000:3000
+    networks:
+      - deel-network
+    volumes:
+      - ./front:/app
+      - /usr/node_modules
+networks:
+  deel-network:
+    driver: bridge

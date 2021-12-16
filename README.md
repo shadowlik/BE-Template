@@ -1,5 +1,41 @@
 # DEEL BACKEND TASK
 
+## Getting Started
+Welcome to Henrique Marques Deel Backend Test!
+### With Docker
+
+To run the complete project (backend and frontend) you must have docker and docker-compose installed in your computer.
+
+> docker-compose up
+
+The backend will be avaiable at [http://localhost:3001](http://localhost:3001) and the frontend at [http://localhost:3000](http://localhost:3000)
+### Without Docker
+
+To run the backend:
+```
+$ npm i
+$ npm run seed
+$ npm start
+```
+
+And in another shell, run the frontend:
+```
+$ cd front/
+$ npm i
+$ npm start
+```
+
+## Docs
+You can find the [Postman](https://www.postman.com/) specifications files at `docs/`. 
+## Testing
+Tests are only avaiable for the backend
+> npm test
+
+----
+----
+----
+# DEEL BACKEND TASK
+
   
 
 💫 Welcome! 🎉

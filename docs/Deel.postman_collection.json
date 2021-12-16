@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "ada3b6e9-9e86-42de-8b09-71bc36056846",
+		"name": "Deel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "List Unpaid Jobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "{{profileId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/jobs/unpaid",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jobs",
+								"unpaid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Job",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "{{profileId}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/jobs/5/pay",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"jobs",
+								"5",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profiles",
+			"item": [
+				{
+					"name": "List Profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/profiles",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contracts",
+			"item": [
+				{
+					"name": "List Contracts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "{{profileId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/contracts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"contracts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Contract by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "{{profileId}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3001/contracts/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"contracts",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Balance",
+			"item": [
+				{
+					"name": "Deposit to Client Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "profile_id",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 20\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/balances/deposit/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"balances",
+								"deposit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get Best Profession",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/best-profession",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"best-profession"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Best Clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/admin/best-clients",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"admin",
+								"best-clients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

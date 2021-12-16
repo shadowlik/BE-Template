@@ -1,0 +1,16 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true,
+        "jest/globals": true
+    },
+    "extends": ["eslint:recommended", "google"],
+    "parserOptions": {
+        "ecmaVersion": 13
+    },
+    "rules": {
+        "require-jsdoc": 0,
+        "new-cap": 0
+    }
+}

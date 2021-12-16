@@ -1,0 +1,8 @@
+.App-header {
+    padding: 20px 0;
+}
+
+.App-header .App-header-ViewAs {
+    justify-content: end;
+    display: flex;
+}
