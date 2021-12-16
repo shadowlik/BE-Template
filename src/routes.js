@@ -71,7 +71,9 @@ routes.forEach((route) => {
   if (route.middlewares) middlewares = [...middlewares, ...route.middlewares];
 
   router[route.method](route.path, middlewares, route.controller);
-  if (config.log) console.log(`[ROUTE] ${route.method.toUpperCase()}: ${route.path}`);
+  if (config.log) {
+    console.log(`[ROUTE] ${route.method.toUpperCase()}: ${route.path}`);
+  }
 });
 
 // Error handler TODO: move to another file

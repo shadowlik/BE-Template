@@ -1,8 +1,22 @@
 const sequelize = require('sequelize');
 const {Profile, Job, Contract} = require('../models');
+const {Op} = require('sequelize');
 
 class ReportService {
   static async bestProfession(start, end, limit = 1) {
+    // TODO: Transform this to a centralized function
+    let dateQuery = {};
+    const startQuery = start ? {[Op.gte]: new Date(start)} : {};
+    const endQuery = end ? {[Op.lte]: new Date(end)} : {};
+    if (start || end) {
+      dateQuery = {
+        paymentDate: {
+          ...startQuery,
+          ...endQuery,
+        },
+      };
+    }
+
     return Job.findAll({
       include: [
         {
@@ -28,10 +42,25 @@ class ReportService {
       raw: true,
       where: {
         paid: true,
+        ...dateQuery,
       },
     });
   }
+
   static async bestClients(start, end, limit = 2) {
+    // TODO: Transform this to a centralized function
+    let dateQuery = {};
+    const startQuery = start ? {[Op.gte]: new Date(start)} : {};
+    const endQuery = end ? {[Op.lte]: new Date(end)} : {};
+    if (start || end) {
+      dateQuery = {
+        paymentDate: {
+          ...startQuery,
+          ...endQuery,
+        },
+      };
+    }
+
     return Job.findAll({
       include: [
         {
@@ -57,6 +86,7 @@ class ReportService {
       raw: true,
       where: {
         paid: true,
+        ...dateQuery,
       },
     });
   }

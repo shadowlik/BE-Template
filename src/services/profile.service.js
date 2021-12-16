@@ -8,6 +8,7 @@ class ProfileService {
      * Get Profile by id
      *
      * @param {Number} id
+     * @return {Promise}
      */
   static getById(id) {
     return Profile.findOne({where: {id}});
@@ -17,7 +18,7 @@ class ProfileService {
      *
      * @param {*} id
      * @param {*} amount
-     * @returns
+     * @return {Promise}
      */
   static async withdrawalBalance(id, amount) {
     const normalizedAmount = Number(amount);
@@ -40,7 +41,7 @@ class ProfileService {
      *
      * @param {*} id
      * @param {*} amount
-     * @returns
+     * @return {Promise}
      */
   static async deposit(id, amount) {
     const user = await Profile.findOne({where: {id}});

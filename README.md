@@ -30,9 +30,6 @@ You can find the [Postman](https://www.postman.com/) specifications files at `do
 ## Testing
 Tests are only avaiable for the backend
 > npm test
-
-----
-----
 ----
 # DEEL BACKEND TASK
 
