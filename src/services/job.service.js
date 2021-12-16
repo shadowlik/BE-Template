@@ -1,4 +1,5 @@
 const {Op} = require('sequelize');
+// TODO: maybe do by dependency injection
 const {Job, Contract} = require('../models');
 
 class JobService {

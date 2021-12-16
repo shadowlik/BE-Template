@@ -1,3 +1,4 @@
+// TODO: maybe do by dependency injection
 const {Contract} = require('../models/contract.model');
 
 class ContractService {

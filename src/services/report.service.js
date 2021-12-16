@@ -1,10 +1,11 @@
 const sequelize = require('sequelize');
+// TODO: maybe do by dependency injection
 const {Profile, Job, Contract} = require('../models');
 const {Op} = require('sequelize');
 
 class ReportService {
   static async bestProfession(start, end, limit = 1) {
-    // TODO: Transform this to a centralized function
+    // TODO: Transform this to a centralized function later
     let dateQuery = {};
     const startQuery = start ? {[Op.gte]: new Date(start)} : {};
     const endQuery = end ? {[Op.lte]: new Date(end)} : {};

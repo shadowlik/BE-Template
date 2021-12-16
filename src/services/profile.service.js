@@ -1,3 +1,5 @@
+
+// TODO: maybe do by dependency injection
 const {Profile} = require('../models');
 
 class ProfileService {
